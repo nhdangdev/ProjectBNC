@@ -1,0 +1,111 @@
+/*  <!-- Google Fonts --> */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --font-family: 'Nunito', sans-serif;
+  --primary-color: #23acae;
+  --color-bg: #040C18;
+  --color-footer: #031B34;
+  --color-blog: #042c54;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-text: #333;
+  --color-subtext: #FF8A71;
+}
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  padding-bottom: 40px;
+
+  & h2 {
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0;
+    color: #4154f1;
+    text-transform: uppercase;
+  }
+
+  & p {
+    margin: 10px 0 0 0;
+    padding: 0;
+    font-size: 38px;
+    line-height: 42px;
+    font-weight: 700;
+    color: #012970;
+  }
+
+  @media (max-width: 768px) {
+    & p {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: #012970;
+  min-height: 40px;
+  margin-top: 82px;
+  color: #fff;
+
+  @media (max-width: 992px) {
+    & {
+      margin-top: 57px;
+    }
+  }
+
+  & h2 {
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  & ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-size: 14px;
+
+    & a {
+      color: #fff;
+      transition: 0.3s;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    & li+li {
+      padding-left: 10px;
+
+    }
+
+    & li+li::before {
+      display: inline-block;
+      padding-right: 10px;
+      color: #8894f6;
+      content: "/";
+    }
+  }
+}

@@ -1,0 +1,274 @@
+@import '../../global.scss/';
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+
+  &-scrolled {
+    // position: -webkit-sticky;
+    // position: sticky;
+    opacity: 0.9;
+    background: #fff;
+    padding: 15px 0;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.2);
+  }
+
+  & .logo {
+    line-height: 0.8;
+    text-decoration: none;
+    font-size: 2em;
+    letter-spacing: 2px;
+    z-index: 10000;
+
+    &:hover {
+      color: var(--primary-color);
+      opacity: 0.8;
+    }
+
+    &>img {
+      max-height: 80px;
+      margin-right: 2px;
+    }
+
+    &>span {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--primary-color);
+      font-family: "Nunito", sans-serif;
+      margin-top: 3px;
+      text-decoration: none;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+
+  & ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  & li {
+    position: relative;
+  }
+
+  & a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 15px;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.3s;
+
+    & i {
+      font-size: 12px;
+      line-height: 0;
+      margin-left: 5px;
+    }
+  }
+
+  & .getLogin {
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 4px;
+    color: #fff;
+    background: var(--primary-color);
+
+    &:hover {
+      color: #fff;
+      background: var(--primary-color);
+      opacity: 0.8;
+    }
+  }
+
+  & .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+    border-radius: 4px;
+
+    & li {
+      min-width: 200px;
+    }
+
+    & a {
+      padding: 10px 20px;
+      font-size: 15px;
+      text-transform: none;
+      font-weight: 600;
+
+      & i {
+        font-size: 12px;
+      }
+    }
+
+    & a:hover,
+    & .active:hover {
+      color: #4154f1;
+    }
+  }
+
+  & .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  & .dropdown .dropdown ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+
+    &:hover>ul {
+      opacity: 1;
+      top: 0;
+      left: 100%;
+      visibility: visible;
+    }
+  }
+
+  @media (max-width: 1366px) {
+    & .dropdown .dropdown ul {
+      left: -90%;
+    }
+
+    & .dropdown .dropdown:hover>ul {
+      left: -100%;
+    }
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #012970;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+
+  &.bi-x {
+    color: #fff;
+  }
+
+  @media (max-width: 991px) {
+    & {
+      display: block;
+    }
+
+    .navbar ul {
+      display: none;
+    }
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(1, 22, 61, 0.9);
+  transition: 0.3s;
+
+  & .mobile-nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  & ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
+  }
+
+  & a {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #012970;
+  }
+
+  & a:hover,
+  & .active,
+  & li:hover>a {
+    color: #4154f1;
+  }
+
+  & .getLogin {
+    margin: 15px;
+  }
+
+  & .dropdown ul {
+    position: static;
+    display: none;
+    margin: 10px 20px;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+
+    & li {
+      min-width: 200px;
+    }
+
+    & a {
+      padding: 10px 20px;
+
+      & i {
+        font-size: 12px;
+      }
+    }
+
+    & a:hover,
+    & .active:hover,
+    & li:hover>a {
+      color: var(--primary-color);
+    }
+  }
+
+  & .dropdown>.dropdown-active {
+    display: block;
+  }
+}
