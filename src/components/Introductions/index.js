@@ -9,7 +9,8 @@ const Introductions = () => {
       <section id="hero" className="hero d-flex align-items-center">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 d-flex flex-column justify-content-center">
+            {/* <div className="col-lg-6 d-flex flex-column justify-content-center"> */}
+            <div className="c-6 m-6 l-6 d-flex flex-column justify-content-center">
               <h1>
                 Chúng tôi cung cấp vật tư y tế, các thiết bị cho phòng thí
                 nghiệm,... dành cho bạn{" "}
@@ -23,7 +24,7 @@ const Introductions = () => {
                 <div className="text-center text-lg-start">
                   <a
                     href="#portfolio"
-                    className="btn-get-started scrollTo d-inline-flex align-items-center justify-content-center align-self-center"
+                    className="c-6 m-6 l-6 btn-get-started scrollTo d-inline-flex align-items-center justify-content-center align-self-center"
                   >
                     <span>Tìm hiểu thêm</span>
                     <i className="bi bi-arrow-right" />
@@ -31,7 +32,7 @@ const Introductions = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 hero-img">
+            <div className="c-6 c-6 m-6 l-6 hero-img">
               {/* <img src="../../../assets/img/hero-img.png" className="img-fluid" alt="" /> */}
               <img src={medicalImg} className="img-fluid" alt="" />
             </div>

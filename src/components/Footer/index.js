@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.scss";
-import "../../App.css";
 
 const Footer = () => {
   return (
