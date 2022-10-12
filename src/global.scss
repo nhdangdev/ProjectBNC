@@ -26,6 +26,14 @@
 section {
   padding: 60px 0;
   overflow: hidden;
+
+  @media (min-width: 740px) and (max-width:1023px) {
+    padding: 0px;
+  }
+
+  @media (max-width: 739px) {
+    padding: 0px;
+  }
 }
 
 .section-header {
@@ -37,7 +45,7 @@ section {
     letter-spacing: 1px;
     font-weight: 700;
     margin: 0;
-    color: #4154f1;
+    color: var(--primary-color);
     text-transform: uppercase;
   }
 
@@ -47,12 +55,10 @@ section {
     font-size: 38px;
     line-height: 42px;
     font-weight: 700;
-    color: #012970;
-  }
+    color: var(--primary-color);
 
-  @media (max-width: 768px) {
-    & p {
-      font-size: 28px;
+    @media (max-width: 739px) {
+      font-size: 20px;
       line-height: 32px;
     }
   }

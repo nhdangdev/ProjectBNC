@@ -2,7 +2,7 @@ import emailjs from "emailjs-com";
 import React, { useRef } from "react";
 import "./style.scss";
 import { init } from "emailjs-com";
-init("user_qwmEHFuWxg4SgZyEEhzBn");
+init("SMVHy4N717OEcXGrs");
 
 const Contact = () => {
   const form = useRef();
@@ -11,18 +11,15 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "gmail",
-        "template_gmail",
-        form.current,
-        "user_qwmEHFuWxg4SgZyEEhzBn"
-      )
+      .sendForm("gmail", "template_gmail", form.current, "SMVHy4N717OEcXGrs")
       .then(
         (result) => {
           console.log(result.text);
+          alert("Tin nhắn đã được gửi đi!");
         },
         (error) => {
           console.log(error.text);
+          alert("Lỗi...", error);
         }
       );
     e.target.reset();
@@ -67,9 +64,9 @@ const Contact = () => {
                     <i className="bi bi-envelope" />
                     <h3>Email</h3>
                     <p>
-                      info @bncmedical.com.vn
+                      an.nguyen@bncmedical.com.vn
                       <br />
-                      contact @bncmedical.com.vn
+                      huyen.vo@bncmedical.com.vn
                     </p>
                     <br />
                     <br />

@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.scss";
+import "../../global.scss";
 import aboutImg from "../../assets/img/about.png";
 
 const About = () => {
@@ -43,12 +44,6 @@ const About = () => {
                       <li>Vật tư tiêu hao</li>
                     </div>
                   </div>
-                  {/* <div className="text-center text-lg-start">
-                                <a href="/#" className="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                                <span>Read More</span>
-                                <i className="bi bi-arrow-right" />
-                                </a>
-                            </div> */}
                 </div>
               </div>
               <div className="col-lg-6 d-flex align-items-center">

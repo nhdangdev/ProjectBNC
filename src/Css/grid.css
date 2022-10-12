@@ -429,7 +429,8 @@
 /* Tablet - PC low resolution */
 @media (min-width: 740px) and (max-width: 1023px) {
     .wide {
-        max-width: 644px;
+        /* max-width: 644px; */
+        max-width: 100%;
     }
 }
 

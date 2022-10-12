@@ -1628,6 +1628,11 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@remix-run/router@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.0.2.tgz#1c17eadb2fa77f80a796ad5ea9bf108e6993ef06"
+  integrity sha512-GRSOFhJzjGN+d4sKHTMSvNeUPoZiDHWmRnXfzaxrqe7dE/Nzlc8BiMSJdLDESZlndM7jIUrZ/F4yWqVYlI0rwQ==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"
@@ -4048,7 +4053,7 @@ electron-to-chromium@^1.4.251:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.272.tgz#cedebaeec5d9879da85b127e65a55c6b4c58344e"
   integrity sha512-KS6gPPGNrzpVv9HzFVq+Etd0AjZEPr5pvaTBn2yD6KV4+cKW4I0CJoJNgmTG6gUQPAMZ4wIPtcOuoou3qFAZCA==
 
-emailjs-com@3.2.0:
+emailjs-com@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/emailjs-com/-/emailjs-com-3.2.0.tgz#a53cb22f1bc433c701c84c53d8b56eefd5ce7111"
   integrity sha512-Prbz3E1usiAwGjMNYRv6EsJ5c373cX7/AGnZQwOfrpNJrygQJ15+E9OOq4pU8yC977Z5xMetRfc3WmDX6RcjAA==
@@ -8086,6 +8091,11 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz#92835de5841c5cf08ba00ddd2d677b6d17ff9adb"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
+react-hook-form@^7.37.0:
+  version "7.37.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.37.0.tgz#4d1738f092d3d8a3ade34ee892d97350b1032b19"
+  integrity sha512-6NFTxsnw+EXSpNNvLr5nFMjPdYKRryQcelTHg7zwBB6vAzfPIcZq4AExP4heVlwdzntepQgwiOQW4z7Mr99Lsg==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -8105,6 +8115,21 @@ react-refresh@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
+
+react-router-dom@6:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.4.2.tgz#115b37d501d6d8ac870683694978c51c43e6c0d2"
+  integrity sha512-yM1kjoTkpfjgczPrcyWrp+OuQMyB1WleICiiGfstnQYo/S8hPEEnVjr/RdmlH6yKK4Tnj1UGXFSa7uwAtmDoLQ==
+  dependencies:
+    "@remix-run/router" "1.0.2"
+    react-router "6.4.2"
+
+react-router@6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.4.2.tgz#300628ee9ed81b8ef1597b5cb98b474efe9779b8"
+  integrity sha512-Rb0BAX9KHhVzT1OKhMvCDMw776aTYM0DtkxqUBP8dNBom3mPXlfNs76JNGK8wKJ1IZEY1+WGj+cvZxHVk/GiKw==
+  dependencies:
+    "@remix-run/router" "1.0.2"
 
 react-scripts@5.0.1:
   version "5.0.1"

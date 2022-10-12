@@ -1,5 +1,6 @@
-import "./style.scss";
 import React from "react";
+import "./style.scss";
+import "../../global.scss";
 import "../../Css/grid.css";
 
 import logo from "@/assets/img/rv-logo.png";
