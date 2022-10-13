@@ -80,7 +80,7 @@ const Header = () => {
                 </a>
               </li>
               <li>
-                <a className="getLogin scrollto" href="#about">
+                <a className="getLogin scrollto" href="/Login">
                   Login
                 </a>
               </li>
