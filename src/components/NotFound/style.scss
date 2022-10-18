@@ -1,5 +1,4 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,6 +8,7 @@ body {
     background: linear-gradient(45deg, #8500ff, #5acaff);
     height: 100vh;
 }
+
 #container {
     position: absolute;
     /* top: 10%;
@@ -21,18 +21,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('./p404.png'),#151729;
+    background: url('./p404.png'), #151729;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
+
 #container .content {
     max-width: 600px;
     text-align: center;
 }
+
 #container .content h2 {
     font-size: 18vw;
     color: #fff;
     line-height: 1em;
 }
+
 #container .content h4 {
     position: relative;
     font-size: 1.5em;
@@ -43,10 +46,12 @@ body {
     padding: 10px 20px;
     display: inline-block;
 }
+
 #container .content p {
     color: #fff;
     font-size: 1.2em;
 }
+
 #container .content a {
     position: relative;
     display: inline-block;

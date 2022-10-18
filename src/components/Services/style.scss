@@ -1,0 +1,156 @@
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services {
+    & .service-box {
+        box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+        height: 100%;
+        padding: 30px 30px;
+        text-align: center;
+        transition: 0.3s;
+        border-radius: 5px;
+
+        & .icon {
+            font-size: 36px;
+            padding: 40px 20px;
+            border-radius: 4px;
+            position: relative;
+            margin-bottom: 25px;
+            display: inline-block;
+            line-height: 0;
+            transition: 0.3s;
+        }
+
+        & h3 {
+            color: #444444;
+            font-weight: 700;
+        }
+
+        & .read-more {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 8px 20px;
+
+            & i {
+                line-height: 0;
+                margin-left: 5px;
+                font-size: 18px;
+            }
+        }
+
+        &.blue {
+            border-bottom: 3px solid #828c91;
+
+            & .icon {
+                color: #2db6fa;
+                background: #dbf3fe;
+            }
+
+            & .read-more {
+                color: #2db6fa;
+            }
+
+            &:hover {
+                background: #2db6fa;
+            }
+        }
+
+        &.orange {
+            border-bottom: 3px solid #f68c09;
+
+            & .icon {
+                color: #f68c09;
+                background: #fde3c4;
+            }
+
+            & .read-more {
+                color: #f68c09;
+            }
+
+            &:hover {
+                background: #f68c09;
+            }
+        }
+
+        &.green {
+            border-bottom: 3px solid #08da4e;
+
+            & .icon {
+                color: #08da4e;
+                background: #cffddf;
+            }
+
+            & .read-more {
+                color: #08da4e;
+            }
+
+            &:hover {
+                background: #08da4e;
+            }
+        }
+
+        &.yellowgreen {
+            border-bottom: 3px solid yellowgreen;
+
+            & .icon {
+                color: yellowgreen;
+                background: #fef7f8;
+            }
+
+            & .read-more {
+                color: yellowgreen;
+            }
+
+            &:hover {
+                background: yellowgreen;
+            }
+        }
+
+        &.purple {
+            border-bottom: 3px solid #b50edf;
+
+            & .icon {
+                color: #b50edf;
+                background: #f8e4fd;
+            }
+
+            & .read-more {
+                color: #b50edf;
+            }
+
+            &:hover {
+                background: #b50edf;
+            }
+        }
+
+        &.pink {
+            border-bottom: 3px solid #f51f9c;
+
+            & .icon {
+                color: #f51f9c;
+                background: #feecf7;
+            }
+
+            & .read-more {
+                color: #f51f9c;
+            }
+
+            &:hover {
+                background: #f51f9c;
+            }
+        }
+
+        &:hover h3,
+        &:hover p,
+        &:hover .read-more {
+            color: #fff;
+        }
+
+        &:hover .icon {
+            background: #fff;
+        }
+    }
+}
