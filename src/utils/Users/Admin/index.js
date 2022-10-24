@@ -1,164 +1,13 @@
-import React from "react";
-import "./style.scss";
+import React from 'react';
+import './style.scss';
 
 const Login = () => {
-  function Validator(options) {
-    var selectorRules = {};
-    // Hàm thực hiện validate
-    function validate(inputElement, rule) {
-      // value: inputElement.value
-      // test function: rule.test
-      var errorElement =
-        inputElement.parentElement.querySelector(".form-message");
-      var errorMessage;
-
-      // Lấy ra các rules của selector
-      var rules = selectorRules[rule.selector];
-
-      // Lặp qua từng rules & kiểm tra
-      // Nếu có lỗi thì dừng việc kiểm tra
-      for (var i = 0; i < rules.length; ++i) {
-        errorMessage = rules[i](inputElement.value);
-        if (errorMessage) break;
-      }
-
-      if (errorMessage) {
-        errorElement.innerText = errorMessage;
-        inputElement.parentElement.classList.add("invalid");
-      } else {
-        errorElement.innerText = "";
-        inputElement.parentElement.classList.remove("invalid");
-      }
-
-      return !errorMessage;
-    }
-
-    // Lấy Element của form cần validate
-    var formElement = document.querySelector(options.form);
-    if (formElement) {
-      // Khi submit form
-      formElement.onsubmit = function (e) {
-        // Bỏ đi hành vi mặc định
-        e.preventDefault();
-
-        var isFormValid = true;
-
-        // Lặp qua từng rules và validate
-        options.rules.forEach(function (rule) {
-          var inputElement = formElement.querySelector(rule.selector);
-          var isValid = validate(inputElement, rule);
-          if (!isValid) {
-            isFormValid = false;
-          }
-        });
-
-        if (isFormValid) {
-          console.log("Không có lỗi");
-        } else {
-          console.log("Có lỗi");
-        }
-      };
-
-      // Lặp qua mỗi rule và xử lý ( lắng nghe sự kiện blur, input, ...)
-      options.rules.forEach(function (rule) {
-        // Lưu lại các Rules cho mỗi input
-        if (Array.isArray(selectorRules[rule.selector])) {
-          selectorRules[rule.selector].push(rule.test);
-        } else {
-          selectorRules[rule.selector] = [rule.test];
-        }
-
-        var inputElement = formElement.querySelector(rule.selector);
-
-        if (inputElement) {
-          // Xử lý trường hợp blur khỏi input
-          inputElement.onblur = function () {
-            validate(inputElement, rule);
-          };
-
-          // Xử lý mỗi khi nười dùng nhập vào input
-          inputElement.oninput = function () {
-            var errorElement = inputElement.parentElement.querySelector(
-              options.errorSelect
-            );
-            errorElement.innerText = " ";
-            inputElement.parentElement.classList.remove("invalid");
-          };
-        }
-      });
-    }
-  }
-
-  // Định nghĩa các Rules
-  // Nguyên tắc của các rules
-  // 1. Khi có lỗi => Trả ra message lỗi
-  // 2. Khi hợp lễ => Không trả ra cái gì cả ( undefined )
-  Validator.isRequired = function (selector, message) {
-    return {
-      selector: selector,
-      test: function (value) {
-        return value.trim() ? undefined : message || "Vui lòng nhập trường này";
-      },
-    };
+  const handleSubmit = () => {
+    console.log('Handle Submit');
   };
-  Validator.isEmail = function (selector, message) {
-    return {
-      selector: selector,
-      test: function (value) {
-        var regex =
-          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        return regex.test(value)
-          ? undefined
-          : message || "Tài khoản hoặc mật khẩu không đúng";
-      },
-    };
+  const backToHome = () => {
+    console.log('Back to Home');
   };
-
-  Validator.minLength = function (selector, min, message) {
-    return {
-      selector: selector,
-      test: function (value) {
-        return value.length >= min
-          ? undefined
-          : message || `Vui lòng nhập tối thiểu ${min} kí tự `;
-      },
-    };
-  };
-  Validator.isConfirmed = function (selector, getConfirmValue, message) {
-    return {
-      selector: selector,
-      test: function (value) {
-        return value === getConfirmValue()
-          ? undefined
-          : message || "Giá trị nhập vào không chính xác";
-      },
-    };
-  };
-
-  // Mong muốn của chúng ta
-  Validator({
-    form: "#form-1",
-    errorSelector: ".form-message",
-    rules: [
-      Validator.isRequired("#fullname", "Vui lòng nhập tên đầy đủ của bạn"),
-      Validator.isEmail("#email"),
-      Validator.minLength("#password", 6),
-      Validator.isRequired(
-        "#password_confirmation",
-        "Vui lòng nhập lại mật khẩu"
-      ),
-      Validator.isConfirmed(
-        "#password_confirmation",
-        function () {
-          return document.querySelector("#form-1 #password").value;
-        },
-        "Mật khẩu nhập lại không chính xác"
-      ),
-    ],
-    onSubmit: function (data) {
-      console.log(data);
-    },
-  });
   return (
     <div className="box">
       <div
@@ -169,32 +18,113 @@ const Login = () => {
       >
         <h2>Sign in</h2>
         <div className="inputBox">
-          <input
-            type="text"
-            required=" required"
-            id="username"
-            onChange={(e) => this.changeInputValue(e)}
-          />
+          <input type="text" required=" required" id="username" />
           <span>Username</span>
           <i></i>
         </div>
         <div className="inputBox">
-          <input
-            type="password"
-            id="password"
-            required=" required"
-            onChange={(e) => this.changeInputValue(e)}
-          />
+          <input type="password" id="password" required=" required" />
           <span>Password</span>
           <i></i>
         </div>
         <div className="links">
           <a href="/">Forgot Password</a>
-          <a href="/">Sign up</a>
+          <a href="/Signup" onClick={handleSubmit}>
+            Sign up
+          </a>
         </div>
-        <input type="submit" value="Login" onSubmit={Validator}></input>
+        <input type="submit" value="Login"></input>
+        <div className="backToHome">
+          <a href="/Home" onClick={backToHome}>
+            Back to home
+          </a>
+        </div>
       </div>
     </div>
   );
 };
 export default Login;
+{
+  /* <div id="toast">
+        <!-- Success -->
+        <div class="toast toast--success">
+            
+        </div>
+    </div>
+
+    <div>
+        <div onclick="showSuccessToast();" class="btn btn--success">Show success Toast</div>
+        <div onclick="showErrorToast();"class="btn btn--warning">Show error Toast</div>
+
+    </div>
+    <script>
+        // Toast function
+        function toast({ 
+            title ='',
+            message ='', 
+            type ='info', 
+            duration = 3000
+        }) {
+            const main = document.getElementById('toast');
+            if (main) {
+                const toast = document.createElement('div');
+
+                // Auto Remove toast
+                const autoRemoveID = setTimeout(function () {
+                    main.removeChild(toast);
+                }, duration + 1000);
+
+                // Remove toast when clicked
+                toast.onclick = function() {
+                    if (e.target.closest('.toast__close')) {
+                        main.removeChild(toast);
+                        clearTimeout(autoRemoveID);
+                    }
+                }
+                const icons = {
+                    success: 'fas fa-check-circle',
+                    info: 'fas fa-info-circle',
+                    warning: 'fas fa-exclamation-circle',
+                    error: 'fas fa-exclamation-circle',
+                };
+                const icon = icons[type];
+                const delay = (duration/ 1000).toFixed(2);
+                
+                toast.classList.add('toast', 'toast--${type}');
+                toast.style.animation = `slideInleft ease 0.3s, fadeOut linear 1s ${delay}s forwards`;
+                toast.innerHTML = `
+                <div class="toast__icon">
+                    <i class="${icon}"></i>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">${title}</h3>
+                    <p class="toast__msg">${message}</p>
+                </div>
+                <div class="toast__close">
+                    <i class="fas fa-times"></i>
+                </div>
+                `;
+                main.appendChild(toast);
+
+                
+            }
+        } 
+        function showSuccessToast() {
+            toast({
+            title: 'Thành công !',
+            message: 'Bạn đã đăng ký tài khoản thành công',
+            type :'success',
+            duration: 5000
+            });
+        }
+        function showErrorToast() {
+            toast({
+            title: 'Thất bại!',
+            message: 'Có lỗi xảy ra, vui lòng liên hệ quản trị viên',
+            type :'error',
+            duration: 5000
+            });
+        }  
+
+    </script> */
+}

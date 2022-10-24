@@ -1,9 +1,9 @@
-import React from "react";
-import "./style.scss";
-import "../../global.scss";
-import "../../Css/grid.css";
+import React from 'react';
+import './style.scss';
+import '~/components/GlobalStyles';
+import '../../Css/grid.css';
 
-import logo from "@/assets/img/rv-logo.png";
+import logo from '~/assets/img/rv-logo.png';
 
 const Header = () => {
   return (
@@ -42,8 +42,7 @@ const Header = () => {
                   </li>
                   <li className="dropdown">
                     <a href="/#">
-                      <span>Deep Drop Down</span>{" "}
-                      <i className="bi bi-chevron-right" />
+                      <span>Deep Drop Down</span> <i className="bi bi-chevron-right" />
                     </a>
                     <ul>
                       <li>

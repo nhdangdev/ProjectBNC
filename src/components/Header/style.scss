@@ -89,23 +89,6 @@
     transition: 0.3s;
     color: var(--primary-color);
 
-    //PC
-    @media (min-width:1024px) {
-      background: red;
-    }
-
-    //Tablet
-    @media (min-width: 740px) and (max-width: 1023px) {
-      font-size: 14px;
-      background: blue;
-    }
-
-    //Mobile 
-    @media (max-width: 739px) {
-      display: none;
-      background: yellow;
-    }
-
     &.nav__bars-btn {
       color: #000;
       margin-left: 5px;

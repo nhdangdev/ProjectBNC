@@ -1,8 +1,9 @@
-import emailjs from "emailjs-com";
-import React, { useRef } from "react";
-import "./style.scss";
-import { init } from "emailjs-com";
-init("SMVHy4N717OEcXGrs");
+import emailjs from 'emailjs-com';
+import React, { useRef } from 'react';
+import './style.scss';
+import { init } from 'emailjs-com';
+init('SMVHy4N717OEcXGrs');
+import '~/components/GlobalStyles';
 
 const Contact = () => {
   const form = useRef();
@@ -10,18 +11,16 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm("gmail", "template_gmail", form.current, "SMVHy4N717OEcXGrs")
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Tin nhắn đã được gửi đi!");
-        },
-        (error) => {
-          console.log(error.text);
-          alert("Lỗi...", error);
-        }
-      );
+    emailjs.sendForm('gmail', 'template_gmail', form.current, 'SMVHy4N717OEcXGrs').then(
+      (result) => {
+        console.log(result.text);
+        alert('Tin nhắn đã được gửi đi!');
+      },
+      (error) => {
+        console.log(error.text);
+        alert('Lỗi...', error);
+      },
+    );
     e.target.reset();
   };
 
@@ -41,10 +40,7 @@ const Contact = () => {
                   <div className="info-box">
                     <i className="bi bi-geo-alt" />
                     <h3>Địa chỉ</h3>
-                    <p>
-                      652/55/5 Cộng Hòa, Phường 13, Quận Tân Bình, Thành phố Hồ
-                      Chí Minh.
-                    </p>
+                    <p>652/55/5 Cộng Hòa, Phường 13, Quận Tân Bình, Thành phố Hồ Chí Minh.</p>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -113,22 +109,10 @@ const Contact = () => {
                     />
                   </div>
                   <div className="col-md-12">
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="phone"
-                      placeholder="Số điện thoại"
-                      required
-                    />
+                    <input type="text" className="form-control" name="phone" placeholder="Số điện thoại" required />
                   </div>
                   <div className="col-md-12">
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="subject"
-                      placeholder="Tiêu đề"
-                      required
-                    />
+                    <input type="text" className="form-control" name="subject" placeholder="Tiêu đề" required />
                   </div>
                   <div className="col-md-12">
                     <textarea
@@ -137,15 +121,14 @@ const Contact = () => {
                       rows={6}
                       placeholder="Nội dung ....."
                       required
-                      defaultValue={""}
+                      defaultValue={''}
                     />
                   </div>
                   <div className="col-md-12 text-center">
                     <div className="loading">Loading</div>
                     <div className="error-message" />
                     <div className="sent-message">
-                      Tin nhắn của bạn đã được gửi. Chúng tôi sẽ trả lời sớm
-                      nhất có thể trong vòng 24h. Xin cảm ơn!
+                      Tin nhắn của bạn đã được gửi. Chúng tôi sẽ trả lời sớm nhất có thể trong vòng 24h. Xin cảm ơn!
                     </div>
                     <button type="submit">Gửi tin nhắn</button>
                   </div>

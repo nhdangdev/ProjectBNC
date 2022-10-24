@@ -1,7 +1,7 @@
-import React from "react";
-import "./style.scss";
-import "../../global.scss";
-import aboutImg from "../../assets/img/about.png";
+import React from 'react';
+import './style.scss';
+import '~/components/GlobalStyles';
+import aboutImg from '../../assets/img/about.png';
 
 const About = () => {
   return (
@@ -16,21 +16,17 @@ const About = () => {
                   <h3>Về chúng tôi</h3>
                   <h2>BNC Medical Equipment</h2>
                   <p>
-                    Được thành lập vào năm 2019, BNC Medical là một trong những
-                    nhà cung cấp vật tư y tế chuyên sâu về “Y học hạt nhân” với
-                    đa dạng về chủng loại sản phẩm tại thị trường Việt Nam và
-                    các nước láng giềng
+                    Được thành lập vào năm 2019, BNC Medical là một trong những nhà cung cấp vật tư y tế chuyên sâu về
+                    “Y học hạt nhân” với đa dạng về chủng loại sản phẩm tại thị trường Việt Nam và các nước láng giềng
                   </p>
                   <p>
-                    Chúng tôi luôn luôn hướng đến mục tiêu nâng cao chất lượng
-                    chăm sóc sức khỏe cho từng khách hàng cũng như chất lượng
-                    sản phẩm đến các công ty đối tác uy tín trong nước.
+                    Chúng tôi luôn luôn hướng đến mục tiêu nâng cao chất lượng chăm sóc sức khỏe cho từng khách hàng
+                    cũng như chất lượng sản phẩm đến các công ty đối tác uy tín trong nước.
                   </p>
                   <p>
-                    Tại BNC Medical, chúng tôi cung cấp đầy đủ các loại vật tư y
-                    tế vì lợi ích cộng đồng, luôn định hướng tất cả sản phẩm và
-                    dịch vụ của BNC mọi lúc, mọi nơi cho mọi người và mọi nhà.
-                    Những nhóm sản phẩm chính chúng tôi cung cấp, bao gồm:
+                    Tại BNC Medical, chúng tôi cung cấp đầy đủ các loại vật tư y tế vì lợi ích cộng đồng, luôn định
+                    hướng tất cả sản phẩm và dịch vụ của BNC mọi lúc, mọi nơi cho mọi người và mọi nhà. Những nhóm sản
+                    phẩm chính chúng tôi cung cấp, bao gồm:
                   </p>
                   <div className="row">
                     <div className="col">
