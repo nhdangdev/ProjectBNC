@@ -1,16 +1,16 @@
- //PC
-    @media (min-width:1024px) {
-      background: red;
-    }
+//PC
+  @media (min-width:1024px) {
+    background: cyan;
+  }
 
-    //Tablet
-    @media (min-width: 740px) and (max-width: 1023px) {
-      font-size: 14px;
-      background: blue;
-    }
+  //Tablet
+  @media (min-width: 740px) and (max-width: 1023px) {
+    font-size: 14px;
+    background: rgb(0, 254, 34);
+  }
 
-    //Mobile 
-    @media (max-width: 739px) {
-      display: none;
-      background: yellow;
-    }
+  //Mobile 
+  @media (max-width: 739px) {
+    display: none;
+    background: rgb(255, 255, 0);
+  }

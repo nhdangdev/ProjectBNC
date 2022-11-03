@@ -6,28 +6,28 @@
   z-index: 997;
   padding: 20px 0;
 
-  &-scrolled {
+  &.header-scrolled {
     opacity: 0.9;
     background: #fff;
     padding: 15px 0;
     box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.2);
+
+    &.fixed-top {
+      position: relative;
+    }
   }
 
   & .logo {
     line-height: 0.8;
     text-decoration: none;
-    font-size: 2em;
-    letter-spacing: 2px;
-    z-index: 10000;
 
     &:hover {
       color: var(--primary-color);
-      opacity: 0.8;
     }
 
-    &>img {
-      max-height: 80px;
-      margin-right: 2px;
+    & img {
+      max-height: 50px;
+      margin-right: 6px;
 
       @media (min-width: 740px) and (max-width: 1023px) {
         max-height: 55px;
@@ -35,24 +35,22 @@
       }
     }
 
-    &>span {
+    & span {
       font-size: 30px;
       font-weight: 700;
       letter-spacing: 1px;
       color: var(--primary-color);
       font-family: "Nunito", sans-serif;
       margin-top: 3px;
-      text-decoration: none;
-      flex-direction: row;
-      flex-wrap: wrap;
 
       @media (max-width: 739px) {
-        font-size: 25px;
-        margin-top: 11px;
+        font-size: 22px;
+        margin-top: 10px;
       }
 
       @media (min-width: 740px) and (max-width: 1023px) {
-        font-size: 20px;
+        font-size: 28px;
+        margin-top: 10px;
       }
     }
   }
@@ -65,6 +63,7 @@
 * Desktop Navigation 
 */
 .navbar {
+  padding: 0;
 
   & ul {
     margin: 0;
@@ -72,10 +71,23 @@
     display: flex;
     list-style: none;
     align-items: center;
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
+
+    @media (min-width: 739px) and (max-width:1023px) {
+      display: none;
+    }
   }
 
   & li {
     position: relative;
+
+    &:hover>a {
+      color: #fff;
+      background: var(--primary-color);
+    }
   }
 
   & a {
@@ -83,22 +95,20 @@
     align-items: center;
     justify-content: space-between;
     padding: 6px 15px;
+    // padding: 10px 0 10px 30px;
+    font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 700;
+    color: var(--primary-color);
     white-space: nowrap;
     transition: 0.3s;
-    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 2px;
 
-    &.nav__bars-btn {
-      color: #000;
-      margin-left: 5px;
-      width: 55px;
-      height: 55px;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 0.7;
-      }
+    &:hover {
+      color: #fff;
+      background: var(--primary-color);
     }
 
     & i {
@@ -106,20 +116,13 @@
       line-height: 0;
       margin-left: 5px;
     }
-
-    &:hover {
-      background: var(--primary-color);
-      color: #fff;
-      border-radius: 4px;
-    }
   }
 
   & .getLogin {
+    background: var(--primary-color);
     padding: 8px 20px;
     margin-left: 30px;
     border-radius: 4px;
-    background: var(--primary-color);
-    text-decoration: none;
     color: #fff;
 
     &:hover {
@@ -127,69 +130,9 @@
     }
   }
 
-  & .dropdown ul {
-    display: block;
-    position: absolute;
-    left: 14px;
-    top: calc(100% + 30px);
-    margin: 0;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    transition: 0.3s;
-    border-radius: 4px;
-
-    & li {
-      min-width: 200px;
-    }
-
-    & a {
-      padding: 10px 20px;
-      font-size: 15px;
-      text-transform: none;
-      font-weight: 600;
-
-      & i {
-        font-size: 12px;
-      }
-    }
-
-    & a:hover,
-    & .active:hover {
-      color: #4154f1;
-    }
-  }
-
-  & .dropdown:hover>ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-  }
-
-  & .dropdown .dropdown ul {
-    top: 0;
-    left: calc(100% - 30px);
-    visibility: hidden;
-
-    &:hover>ul {
-      opacity: 1;
-      top: 0;
-      left: 100%;
-      visibility: visible;
-    }
-  }
-
-  @media (max-width: 1366px) {
-    & .dropdown .dropdown ul {
-      left: -90%;
-    }
-
-    & .dropdown .dropdown:hover>ul {
-      left: -100%;
-    }
+  & .active {
+    color: #fff;
+    background: var(--primary-color);
   }
 }
 
@@ -197,30 +140,24 @@
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  font-size: 50px;
+  color: var(--primary-color);
+  font-size: 28px;
   cursor: pointer;
   display: none;
   line-height: 0;
   transition: 0.5s;
-  color: var(--primary-color);
 
-  &.bi-x {
-    color: #fff;
-  }
-
-  @media (max-width: 991px) {
-    & {
-      display: none;
-    }
-
-    .navbar ul {
-      display: none;
-    }
-  }
-
-  @media (max-width: 739px) {
+  @media (min-width: 740px) and (max-width: 1023px) {
     display: block;
   }
+
+  @media (max-width:739px) {
+    display: block;
+  }
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
 }
 
 .navbar-mobile {
@@ -255,51 +192,25 @@
 
   & a {
     padding: 10px 20px;
-    font-size: 15px;
-    color: #012970;
+    font-size: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+      background: var(--primary-color);
+    }
   }
 
-  & a:hover,
-  & .active,
+  & .active {
+    color: var(--primary-color);
+  }
+
   & li:hover>a {
-    color: #4154f1;
+    color: #fff;
   }
 
   & .getLogin {
     margin: 15px;
-  }
-
-  & .dropdown ul {
-    position: static;
-    display: none;
-    margin: 10px 20px;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 1;
-    visibility: visible;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-
-    & li {
-      min-width: 200px;
-    }
-
-    & a {
-      padding: 10px 20px;
-
-      & i {
-        font-size: 12px;
-      }
-    }
-
-    & a:hover,
-    & .active:hover,
-    & li:hover>a {
-      color: var(--primary-color);
-    }
-  }
-
-  & .dropdown>.dropdown-active {
-    display: block;
   }
 }

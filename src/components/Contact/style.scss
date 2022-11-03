@@ -87,29 +87,29 @@
     & textarea:focus {
       border-color: #4154f1;
     }
+
+    & input {
+      padding: 10px 15px;
+    }
+
+    & textarea {
+      padding: 12px 15px;
+    }
+
+    & button[type="submit"] {
+      background: var(--primary-color);
+      border: 0;
+      padding: 10px 30px;
+      color: #fff;
+      transition: 0.4s;
+      border-radius: 4px;
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
   }
-}
-
-.contact .php-email-form input {
-  padding: 10px 15px;
-}
-
-.contact .php-email-form textarea {
-  padding: 12px 15px;
-}
-
-.contact .php-email-form button[type="submit"] {
-  background: var(--primary-color);
-  border: 0;
-  padding: 10px 30px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 4px;
-  opacity: 1;
-}
-
-.contact .php-email-form button[type="submit"]:hover {
-  opacity: 0.7;
 }
 
 @-webkit-keyframes animate-loading {

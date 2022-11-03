@@ -14,10 +14,12 @@
   --color-bg: #040C18;
   --color-footer: #031B34;
   --color-blog: #042c54;
-  --color-black: #000;
-  --color-white: #fff;
-  --color-text: #333;
-  --color-subtext: #FF8A71;
+  --black: #000;
+  --white: #fff;
+  --text-color: #333;
+  --subtext-color: #FF8A71;
+  --sidebar-color: #007172;
+  --search-border-radius: 92px;
 }
 
 /*--------------------------------------------------------------
@@ -42,19 +44,19 @@ section {
 
   & h2 {
     font-size: 11px;
+    margin: 0;
     letter-spacing: 1px;
     font-weight: 700;
-    margin: 0;
     color: var(--primary-color);
     text-transform: uppercase;
   }
 
   & p {
+    font-size: 38px;
     margin: 10px 0 0 0;
     padding: 0;
-    font-size: 38px;
-    line-height: 42px;
     font-weight: 700;
+    line-height: 42px;
     color: var(--primary-color);
 
     @media (max-width: 739px) {
@@ -64,54 +66,14 @@ section {
   }
 }
 
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 15px 0;
-  background: #012970;
-  min-height: 40px;
-  margin-top: 82px;
-  color: #fff;
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
 
-  @media (max-width: 992px) {
-    & {
-      margin-top: 57px;
-    }
-  }
-
-  & h2 {
-    font-size: 28px;
-    font-weight: 500;
-  }
-
-  & ol {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0 0 10px 0;
-    margin: 0;
-    font-size: 14px;
-
-    & a {
-      color: #fff;
-      transition: 0.3s;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    & li+li {
-      padding-left: 10px;
-
-    }
-
-    & li+li::before {
-      display: inline-block;
-      padding-right: 10px;
-      color: #8894f6;
-      content: "/";
-    }
-  }
+a[href] {
+  color: var(--text-color);
+  text-decoration: none;
 }

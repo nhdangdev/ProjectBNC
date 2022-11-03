@@ -161,62 +161,70 @@ const Register = () => {
     });
   };
   return (
-    <div className="box">
-      <div
-        action=""
-        className="form"
-        method="POST"
-        id="form-1"
-        onSubmit={(e) => {
-          this.submitForm(e);
-        }}
-      >
-        <h2>Sign Up</h2>
-        <div className="inputBox">
-          <input
-            id="username"
-            type="text"
-            required=" required"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <span className="form-message">Username</span>
-          <i></i>
-        </div>
-        <div className="inputBox">
-          <input
-            id="fullnames"
-            type="text"
-            required=" required"
-            value={fullname}
-            onChange={(e) => setFullName(e.target.value)}
-          />
-          <span className="form-message">Fullname</span>
-          <i></i>
-        </div>
-        <div className="inputBox">
-          <input id="email" type="text" required=" required" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <span className="form-message">Email</span>
-          <i></i>
-        </div>
-        <div className="inputBox">
-          <input
-            id="password"
-            type="password"
-            required=" required"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <span className="form-message">Password</span>
-          <i></i>
-        </div>
-        <div className="links">
-          <a href="/">Forgot Password</a>
-          <a href="/Signin">Sign in</a>
-        </div>
-        <input type="submit" value="Register" onClick={handleSubmit}></input>
-        <div className="backToHome">
-          <a href="/Home">Back to home</a>
+    <div className="container_RegisterPages">
+      <div className="box detail-register">
+        <div
+          action=""
+          className="form"
+          method="POST"
+          id="form-1"
+          onSubmit={(e) => {
+            this.submitForm(e);
+          }}
+        >
+          <h2>Sign Up</h2>
+          <div className="inputBox">
+            <input
+              id="username"
+              type="text"
+              required=" required"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <span className="form-message">Username</span>
+            <i></i>
+          </div>
+          <div className="inputBox">
+            <input
+              id="fullnames"
+              type="text"
+              required=" required"
+              value={fullname}
+              onChange={(e) => setFullName(e.target.value)}
+            />
+            <span className="form-message">Fullname</span>
+            <i></i>
+          </div>
+          <div className="inputBox">
+            <input
+              id="email"
+              type="text"
+              required=" required"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <span className="form-message">Email</span>
+            <i></i>
+          </div>
+          <div className="inputBox">
+            <input
+              id="password"
+              type="password"
+              required=" required"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <span className="form-message">Password</span>
+            <i></i>
+          </div>
+          <div className="links">
+            <a href="/">Forgot Password</a>
+            <a href="/Login">Sign in</a>
+          </div>
+          <input type="submit" value="Register" onClick={handleSubmit}></input>
+          <div className="backToHome">
+            <a href="/">Back to home</a>
+          </div>
         </div>
       </div>
     </div>

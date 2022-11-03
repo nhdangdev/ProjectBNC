@@ -9,35 +9,37 @@ const Login = () => {
     console.log('Back to Home');
   };
   return (
-    <div className="box">
-      <div
-        className="form"
-        onSubmit={(e) => {
-          this.submitForm(e);
-        }}
-      >
-        <h2>Sign in</h2>
-        <div className="inputBox">
-          <input type="text" required=" required" id="username" />
-          <span>Username</span>
-          <i></i>
-        </div>
-        <div className="inputBox">
-          <input type="password" id="password" required=" required" />
-          <span>Password</span>
-          <i></i>
-        </div>
-        <div className="links">
-          <a href="/">Forgot Password</a>
-          <a href="/Signup" onClick={handleSubmit}>
-            Sign up
-          </a>
-        </div>
-        <input type="submit" value="Login"></input>
-        <div className="backToHome">
-          <a href="/Home" onClick={backToHome}>
-            Back to home
-          </a>
+    <div className="container_LoginPages">
+      <div className="box">
+        <div
+          className="form"
+          onSubmit={(e) => {
+            this.submitForm(e);
+          }}
+        >
+          <h2>Sign in</h2>
+          <div className="inputBox">
+            <input type="text" required=" required" id="username" />
+            <span>Username</span>
+            <i></i>
+          </div>
+          <div className="inputBox">
+            <input type="password" id="password" required=" required" />
+            <span>Password</span>
+            <i></i>
+          </div>
+          <div className="links">
+            <a href="/">Forgot Password</a>
+            <a href="/Register" onClick={handleSubmit}>
+              Sign up
+            </a>
+          </div>
+          <input type="submit" value="Login"></input>
+          <div className="backToHome">
+            <a href="/" onClick={backToHome}>
+              Back to home
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
-import React from "react";
-import medicalImg from "../../assets/img/medical.jpg";
-import "./style.scss";
+import React from 'react';
+import medicalImg from '../../assets/img/medical.jpg';
+import './style.scss';
 
 const Introductions = () => {
   return (
@@ -11,19 +11,15 @@ const Introductions = () => {
           <div className="row">
             {/* <div className="col-lg-6 d-flex flex-column justify-content-center"> */}
             <div className="c-6 m-6 l-6 d-flex flex-column justify-content-center">
-              <h1>
-                Chúng tôi cung cấp vật tư y tế, các thiết bị cho phòng thí
-                nghiệm,... dành cho bạn{" "}
-              </h1>
+              <h1>Chúng tôi cung cấp vật tư y tế, các thiết bị cho phòng thí nghiệm,... dành cho bạn </h1>
               <h2>
-                Tại đây chúng tôi chuyên cung cấp các thiết bị, vật tư y tế như
-                đồ phòng dịch, khẩu trang, môi trường vận chuyển, filter tips
-                10ul, 100ul, 200ul, 1000ul, micropipet .....
+                Tại đây chúng tôi chuyên cung cấp các thiết bị, vật tư y tế như đồ phòng dịch, khẩu trang, môi trường
+                vận chuyển, filter tips 10ul, 100ul, 200ul, 1000ul, micropipet .....
               </h2>
               <div>
                 <div className="text-center text-lg-start">
                   <a
-                    href="#portfolio"
+                    href="/"
                     className="c-6 m-6 l-6 btn-get-started scrollTo d-inline-flex align-items-center justify-content-center align-self-center"
                   >
                     <span>Tìm hiểu thêm</span>

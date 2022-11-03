@@ -1,13 +1,19 @@
+/* eslint-disable react/prop-types */
+
+import React from 'react';
 import Header from '~/components/Header';
-import SideBar from './Sidebar';
+import Search from './Search';
 
 function DefaultLayout({ children }) {
   return (
     <div>
       <Header />
-      <div className="container">
-        <SideBar />
-        <div className="content">{children}</div>
+      <div>
+        <Search />
+        <div>
+          <h1>Index cua DefaultLayout</h1>
+          {children}
+        </div>
       </div>
     </div>
   );
