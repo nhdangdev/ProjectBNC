@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-
+import './Validator.js';
 const Login = () => {
   const handleSubmit = () => {
     console.log('Handle Submit');
@@ -11,6 +11,35 @@ const Login = () => {
   return (
     <div className="container_LoginPages">
       <div className="box">
+        {/* <ul className="fly-in-text hidden">
+          <li>
+            <h2>Đ</h2>
+          </li>
+          <li>
+            <h2>Ă</h2>
+          </li>
+          <li>
+            <h2>N</h2>
+          </li>
+          <li>
+            <h2>G</h2>
+          </li>
+          <li>
+            <h2>N</h2>
+          </li>
+          <li>
+            <h2>H</h2>
+          </li>
+          <li>
+            <h2>Ậ</h2>
+          </li>
+          <li>
+            <h2>P</h2>
+          </li>
+          <li>
+            <h2>!</h2>
+          </li>
+        </ul> */}
         <div
           className="form"
           onSubmit={(e) => {

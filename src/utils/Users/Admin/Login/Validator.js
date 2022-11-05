@@ -5,8 +5,7 @@ function Validator(options) {
   function validate(inputElement, rule) {
     // value: inputElement.value
     // test function: rule.test
-    var errorElement =
-      inputElement.parentElement.querySelector(".form-message");
+    var errorElement = inputElement.parentElement.querySelector('.form-message');
     var errorMessage;
 
     // Lấy ra các rules của selector
@@ -21,10 +20,10 @@ function Validator(options) {
 
     if (errorMessage) {
       errorElement.innerText = errorMessage;
-      inputElement.parentElement.classList.add("invalid");
+      inputElement.parentElement.classList.add('invalid');
     } else {
-      errorElement.innerText = "";
-      inputElement.parentElement.classList.remove("invalid");
+      errorElement.innerText = '';
+      inputElement.parentElement.classList.remove('invalid');
     }
 
     return !errorMessage;
@@ -50,9 +49,9 @@ function Validator(options) {
       });
 
       if (isFormValid) {
-        console.log("Không có lỗi");
+        console.log('Không có lỗi');
       } else {
-        console.log("Có lỗi");
+        console.log('Có lỗi');
       }
     };
 
@@ -75,11 +74,9 @@ function Validator(options) {
 
         // Xử lý mỗi khi nười dùng nhập vào input
         inputElement.oninput = function () {
-          var errorElement = inputElement.parentElement.querySelector(
-            options.errorSelect
-          );
-          errorElement.innerText = " ";
-          inputElement.parentElement.classList.remove("invalid");
+          var errorElement = inputElement.parentElement.querySelector(options.errorSelect);
+          errorElement.innerText = ' ';
+          inputElement.parentElement.classList.remove('invalid');
         };
       }
     });
@@ -94,7 +91,7 @@ Validator.isRequired = function (selector, message) {
   return {
     selector: selector,
     test: function (value) {
-      return value.trim() ? undefined : message || "Vui lòng nhập trường này";
+      return value.trim() ? undefined : message || 'Vui lòng nhập trường này';
     },
   };
 };
@@ -102,11 +99,8 @@ Validator.isEmail = function (selector, message) {
   return {
     selector: selector,
     test: function (value) {
-      var regex =
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      return regex.test(value)
-        ? undefined
-        : message || "Trường này phải là email";
+      var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      return regex.test(value) ? undefined : message || 'Trường này phải là email';
     },
   };
 };
@@ -115,9 +109,7 @@ Validator.minLength = function (selector, min, message) {
   return {
     selector: selector,
     test: function (value) {
-      return value.length >= min
-        ? underfined
-        : message || `Vui lòng nhập tối thiểu ${min} kí tự `;
+      return value.length >= min ? undefined : message || `Vui lòng nhập tối thiểu ${min} kí tự `;
     },
   };
 };
@@ -125,34 +117,35 @@ Validator.isConfirmed = function (selector, getConfirmValue, message) {
   return {
     selector: selector,
     test: function (value) {
-      return value === getConfirmValue()
-        ? undefined
-        : message || "Giá trị nhập vào không chính xác";
+      return value === getConfirmValue() ? undefined : message || 'Giá trị nhập vào không chính xác';
     },
   };
 };
 
 // Mong muốn của chúng ta
 Validator({
-  form: "#form-1",
-  errorSelector: ".form-message",
+  form: '#form-1',
+  errorSelector: '.form-message',
   rules: [
-    Validator.isRequired("#fullname", "Vui lòng nhập tên đầy đủ của bạn"),
-    Validator.isEmail("#email"),
-    Validator.minLength("#password", 6),
-    Validator.isRequired(
-      "#password_confirmation",
-      "Vui lòng nhập lại mật khẩu"
-    ),
+    Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+    Validator.isEmail('#email'),
+    Validator.minLength('#password', 6),
+    Validator.isRequired('#password_confirmation', 'Vui lòng nhập lại mật khẩu'),
     Validator.isConfirmed(
-      "#password_confirmation",
+      '#password_confirmation',
       function () {
-        return document.querySelector("#form-1 #password").value;
+        return document.querySelector('#form-1 #password').value;
       },
-      "Mật khẩu nhập lại không chính xác"
+      'Mật khẩu nhập lại không chính xác',
     ),
   ],
   onSubmit: function (data) {
     console.log(data);
   },
 });
+
+// (function () {
+//   setTimeout(function () {
+//     '.fly-in-text'.removeClass('hidden');
+//   }, 500);
+// })();

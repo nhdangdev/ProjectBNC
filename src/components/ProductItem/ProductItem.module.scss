@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 9px 16px;
+  cursor: pointer;
+
+  &:hover {
+    background: RGBA(22, 24, 35, 0.03);
+  }
+}
+
+.product-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.product-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.product-check {
+  margin-left: 6px;
+  font-size: 1.6rem;
+  color: RGB(32, 213, 236);
+}
+
+.product-username {
+  font-size: 1.4rem;
+  color: RGBA(22, 24, 35, 0.5);
+}

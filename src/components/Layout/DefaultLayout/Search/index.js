@@ -2,16 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
+
+import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import './style.scss';
 import images from '~/assets/img';
+import ProductItem from '~/components/ProductItem';
 
 function Search() {
   const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
-      setSearchResult([1, 2, 3]);
+      setSearchResult([]);
     }, 3000);
   }, []);
 
@@ -25,11 +28,15 @@ function Search() {
           interactive
           visible={searchResult.length > 0}
           render={(attrs) => (
-            <PopperWrapper>
-              <div className="search-result" tabIndex="-1" {...attrs}>
-                Ket Qua
-              </div>
-            </PopperWrapper>
+            <div className="search-result" tabIndex="-1" {...attrs}>
+              <PopperWrapper>
+                <h4 className="search-title">Kết Quả</h4>
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
+                <ProductItem />
+              </PopperWrapper>
+            </div>
           )}
         >
           <div className="search">
@@ -44,7 +51,9 @@ function Search() {
           </div>
         </Tippy>
         <div className="acctions">
-          <p>Acctions - ready update</p>
+          {/* <p>Acctions - ready update</p> */}
+          <Button text>Upload</Button>
+          <Button rounded>Exam</Button>
         </div>
       </div>
     </header>

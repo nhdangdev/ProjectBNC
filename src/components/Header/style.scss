@@ -18,11 +18,12 @@
   }
 
   & .logo {
+    display: flex;
     line-height: 0.8;
-    text-decoration: none;
+    align-items: center;
 
     &:hover {
-      color: var(--primary-color);
+      opacity: 0.8;
     }
 
     & img {
@@ -53,6 +54,23 @@
         margin-top: 10px;
       }
     }
+  }
+}
+
+.header_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 30px;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
   }
 }
 
@@ -121,7 +139,7 @@
   & .getLogin {
     background: var(--primary-color);
     padding: 8px 20px;
-    margin-left: 30px;
+    margin-left: 10px;
     border-radius: 4px;
     color: #fff;
 
@@ -135,6 +153,7 @@
     background: var(--primary-color);
   }
 }
+
 
 /**
 * Mobile Navigation 

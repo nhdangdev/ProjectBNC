@@ -10,8 +10,9 @@ const Header = () => {
     /* ======= Header ======= */
     <header id="header" className="header header-scrolled fixed-top">
       {/* <div className="grid wide"> */}
-      <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
-        <a href="/" className="logo d-flex align-items-center">
+      {/* <div className="container-fluid container-xl d-flex align-items-center justify-content-between"> */}
+      <div className="header_wrapper">
+        <a href="/" className="logo">
           <img src={logo} alt="Logo" />
           <span>
             Medical <br /> Equipment
