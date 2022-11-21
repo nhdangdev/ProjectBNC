@@ -2,15 +2,17 @@ import React from 'react';
 import './style.scss';
 import '~/components/GlobalStyles';
 import '../../Css/grid.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignIn } from '@fortawesome/free-solid-svg-icons';
 
 import logo from '~/assets/img/rv-logo.png';
+import Button from '~/components/Button';
 
 const Header = () => {
   return (
     /* ======= Header ======= */
     <header id="header" className="header header-scrolled fixed-top">
       {/* <div className="grid wide"> */}
-      {/* <div className="container-fluid container-xl d-flex align-items-center justify-content-between"> */}
       <div className="header_wrapper">
         <a href="/" className="logo">
           <img src={logo} alt="Logo" />
@@ -47,9 +49,9 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a className="getLogin scrollto" href="/Login">
+              <Button className="getLogin scrollto" href="/Login" rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
                 Đăng nhập
-              </a>
+              </Button>
             </li>
           </ul>
           <i className="bi bi-list mobile-nav-toggle " />

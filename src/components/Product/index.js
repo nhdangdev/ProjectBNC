@@ -55,7 +55,7 @@ function Product() {
                   <div className="entry-meta">
                     <ul>
                       <li className="d-flex align-items-center">
-                        <i className="bi bi-person"></i> <a href="blog-single.html">John Doe</a>
+                        z<i className="bi bi-person"></i> <a href="blog-single.html">John Doe</a>
                       </li>
                       <li className="d-flex align-items-center">
                         <i className="bi bi-clock"></i>{' '}

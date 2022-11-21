@@ -2,14 +2,14 @@
 
 import React from 'react';
 import Header from '~/components/Header';
-import Search from './Search';
+import OnTop from './OnTop';
 
 function DefaultLayout({ children }) {
   return (
     <div>
       <Header />
       <div>
-        <Search />
+        <OnTop />
         <div>
           <h1>Index cua DefaultLayout</h1>
           {children}

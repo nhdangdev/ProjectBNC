@@ -27,7 +27,6 @@ const Footer = () => {
               <div className="row gy-4">
                 <div className="col-lg-5 col-md-12 footer-info">
                   <a href="/#" className="logo d-flex align-items-center">
-                    {/* <img src="../../assets/img/logo.png" alt="" /> */}
                     <span>Công ty TNHH Thương Mại Và Xuất Nhập Khẩu BNC</span>
                   </a>
                   <p>
@@ -85,9 +84,6 @@ const Footer = () => {
                     <li>
                       <i className="bi bi-chevron-right" /> <a href="/vattutieuhao">Vật tư tiêu hao</a>
                     </li>
-                    {/* <li>
-                      <i className="bi bi-chevron-right" /> <a href="/vat">Vật tư bệnh viện</a>
-                    </li> */}
                     <li>
                       <i className="bi bi-chevron-right" /> <a href="/phongthinghiem">Phòng thí nghiệm</a>
                     </li>

@@ -1,62 +1,80 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import Tippy from '@tippyjs/react/headless';
+import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'; // Thiếu faSpinner
+import HeaderlessTippy from '@tippyjs/react/headless';
 
-import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import './style.scss';
-import images from '~/assets/img';
+import classNames from 'classnames/bind';
+import styles from './Search.module.scss';
+// import images from '~/assets/img';
 import ProductItem from '~/components/ProductItem';
 
+const cx = classNames.bind(styles);
 function Search() {
+  const [searchValue, setSearchValue] = useState('');
   const [searchResult, setSearchResult] = useState([]);
+  const [showResult, setShowResult] = useState(true);
+
+  const inputRef = useRef();
 
   useEffect(() => {
-    setTimeout(() => {
-      setSearchResult([]);
-    }, 3000);
-  }, []);
+    fetch(``)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      });
+  }, [searchValue]);
+
+  const handleClear = () => {
+    setSearchValue('');
+    setSearchResult([]);
+    inputRef.current.focus(); // useRef => Delete and focus the input
+  };
+
+  /*eslint no-const-assign: "error"*/
+  /*eslint-env es6*/
+  const handleHideResult = () => {
+    setShowResult(false);
+  };
 
   return (
-    <header className="wrapper">
-      <div className="inner">
-        {/* <div className="logo"> */}
-        <img src={images.logo} alt="Demo để xóa" />
-        {/* </div> */}
-        <Tippy
-          interactive
-          visible={searchResult.length > 0}
-          render={(attrs) => (
-            <div className="search-result" tabIndex="-1" {...attrs}>
-              <PopperWrapper>
-                <h4 className="search-title">Kết Quả</h4>
-                <ProductItem />
-                <ProductItem />
-                <ProductItem />
-                <ProductItem />
-              </PopperWrapper>
-            </div>
-          )}
-        >
-          <div className="search">
-            <input placeholder="Tìm kiếm sản phẩm ..." spellCheck={false} />
-            <button className="clear">
-              <FontAwesomeIcon icon={faCircleXmark} />
-            </button>
-            <FontAwesomeIcon className="loading" icon={faSpinner} />
-            <button className="search-btn">
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
-          </div>
-        </Tippy>
-        <div className="acctions">
-          {/* <p>Acctions - ready update</p> */}
-          <Button text>Upload</Button>
-          <Button rounded>Exam</Button>
+    <HeaderlessTippy
+      interactive
+      visible={showResult && searchResult.length > 0}
+      render={(attrs) => (
+        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+          {/* Search */}
+          <PopperWrapper>
+            <h4 className={cx('search-title')}>Kết Quả</h4>
+            <ProductItem />
+            <ProductItem />
+            <ProductItem />
+            <ProductItem />
+          </PopperWrapper>
         </div>
+      )}
+      onClickOutside={handleHideResult}
+    >
+      <div className={cx('search')}>
+        <input
+          ref={inputRef}
+          value={searchValue}
+          placeholder="Tìm kiếm sản phẩm ..."
+          spellCheck={false}
+          onChange={(e) => setSearchValue(e.target.value)}
+          onFocus={() => setShowResult(true)}
+        />
+        {!!searchValue && (
+          <button className={cx('clear')} onClick={handleClear}>
+            <FontAwesomeIcon icon={faCircleXmark} />
+          </button>
+        )}
+        {/* <FontAwesomeIcon className={cx('loading')} icon={faSpinner} /> */}
+        <button className={cx('search-btn')}>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </button>
       </div>
-    </header>
+    </HeaderlessTippy>
 
     // ===============================Main content ============================================
     // <aside className={cx('search')}>

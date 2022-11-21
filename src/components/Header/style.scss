@@ -62,17 +62,9 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 80px;
 }
 
-/*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -101,6 +93,7 @@
 
   & li {
     position: relative;
+    margin-left: 5px;
 
     &:hover>a {
       color: #fff;
@@ -113,7 +106,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 6px 15px;
-    // padding: 10px 0 10px 30px;
     font-family: "Nunito", sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -140,6 +132,7 @@
     background: var(--primary-color);
     padding: 8px 20px;
     margin-left: 10px;
+    margin-right: 1px;
     border-radius: 4px;
     color: #fff;
 
@@ -233,3 +226,22 @@
     margin: 15px;
   }
 }
+
+// .more-btn {
+//   font-size: 1.2rem;
+//   margin-left: 28px;
+//   padding: 4px 8px;
+//   background: transparent;
+// }
+
+// .Popper_wrapper__ogBUm {
+//   min-height: 50px;
+// }
+
+
+// // Menu Items
+// .menu-items {
+//   width: 100%;
+//   border-radius: 8px;
+//   height: 100%;
+// }

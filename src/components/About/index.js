@@ -1,8 +1,7 @@
 import React from 'react';
 import './style.scss';
 import '~/components/GlobalStyles';
-// import images from '~/assets/img';
-import aboutImg from '~/assets/img/about.png';
+import images from '~/assets/img';
 
 const About = () => {
   return (
@@ -44,8 +43,7 @@ const About = () => {
                 </div>
               </div>
               <div className="col-lg-6 d-flex align-items-center">
-                <img src={aboutImg} className="img-fluid" alt="" />
-                {/* <img src={images.aboutImg} className="img-fluid" alt="about" /> */}
+                <img src={images.aboutImg} className="img-fluid" alt="about" />
               </div>
             </div>
           </div>

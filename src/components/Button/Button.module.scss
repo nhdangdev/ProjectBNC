@@ -1,10 +1,12 @@
 .wrapper {
-
   --primary: rgb(210, 108, 86);
-  font-size: 1.1rem;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 100px;
   padding: 9px 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
   border-radius: 4px;
   cursor: pointer;
   background-color: var(--white);
@@ -21,26 +23,13 @@
   }
 }
 
+.icon+.title,
+.title+.icon {
+  margin-left: 8px;
+}
+
 
 // Button Types
-.primary {
-  color: var(--white);
-  background-color: var(--primary);
-
-  &:hover {
-    background: linear-gradient(0deg, RGBA(0 0 0, 0, 06) RGBA(0 0 0, 0, 06)), #fe2c25;
-  }
-}
-
-.outline {
-  color: var(--primary);
-  border-color: currentColor;
-
-  &:hover {
-    background-color: var(--primary);
-  }
-}
-
 .rounded {
   border-radius: 999px;
   box-shadow: 0 2px 8px RGBA(0 0 0, 0, 06);
@@ -52,14 +41,31 @@
   }
 }
 
+.primary {
+  color: var(--white);
+  background-color: var(--primary);
+  border-color: var(--primary);
+
+  &:hover {
+    background: linear-gradient(0deg, RGBA(0 0 0, 0, 06) RGBA(0 0 0, 0, 06)), #fe2c25;
+  }
+}
+
+.outline {
+  color: var(--primary);
+  border-color: currentColor;
+
+  &:hover {
+    border-color: currentColor;
+    background-color: var(--primary);
+  }
+}
+
 .text {
   &:hover {
     text-decoration: underline;
   }
 }
-
-
-//Disabled
 
 // Button size
 .small {

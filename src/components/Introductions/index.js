@@ -1,6 +1,7 @@
 import React from 'react';
-import medicalImg from '../../assets/img/medical.jpg';
+import images from '~/assets/img';
 import './style.scss';
+import '~/components/GlobalStyles';
 
 const Introductions = () => {
   return (
@@ -9,28 +10,29 @@ const Introductions = () => {
       <section id="hero" className="hero d-flex align-items-center">
         <div className="container">
           <div className="row">
-            {/* <div className="col-lg-6 d-flex flex-column justify-content-center"> */}
-            <div className="c-6 m-6 l-6 d-flex flex-column justify-content-center">
-              <h1>Chúng tôi cung cấp vật tư y tế, các thiết bị cho phòng thí nghiệm,... dành cho bạn </h1>
-              <h2>
-                Tại đây chúng tôi chuyên cung cấp các thiết bị, vật tư y tế như đồ phòng dịch, khẩu trang, môi trường
-                vận chuyển, filter tips 10ul, 100ul, 200ul, 1000ul, micropipet .....
+            <div className="col-lg-6 d-flex flex-column justify-content-center">
+              <h1 data-aos="fade-up">
+                Chúng tôi cung cấp vật tư y tế, các thiết bị cho phòng thí nghiệm,... dành cho bạn
+              </h1>
+              <h2 data-aos="fade-up" data-aos-delay="400">
+                Tại đây chúng tôi chuyên cung cấp các thiết bị, vật tư y tế như bông băng gạc y tế các loại, đồ phòng
+                dịch, khẩu trang, môi trường vận chuyển, filter tips 10ul, 100ul, 200ul, 1000ul, micropipet, ống
+                eppendorf, dây truyền dịch, bơm kiêm tiêm 1ml, 3ml, 5ml, 10ml, 20ml, .....
               </h2>
-              <div>
+              <div data-aos="fade-up" data-aos-delay="600">
                 <div className="text-center text-lg-start">
                   <a
-                    href="/"
-                    className="c-6 m-6 l-6 btn-get-started scrollTo d-inline-flex align-items-center justify-content-center align-self-center"
+                    href="#about"
+                    className="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
                   >
                     <span>Tìm hiểu thêm</span>
-                    <i className="bi bi-arrow-right" />
+                    <i className="bi bi-arrow-right"></i>
                   </a>
                 </div>
               </div>
             </div>
-            <div className="c-6 c-6 m-6 l-6 hero-img">
-              {/* <img src="../../../assets/img/hero-img.png" className="img-fluid" alt="" /> */}
-              <img src={medicalImg} className="img-fluid" alt="" />
+            <div className="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+              <img src={images.medicalImg} className="img-fluid" alt="" />
             </div>
           </div>
         </div>
@@ -39,5 +41,4 @@ const Introductions = () => {
     </div>
   );
 };
-
 export default Introductions;

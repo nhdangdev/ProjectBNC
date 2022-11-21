@@ -9,6 +9,7 @@ import Register from '~/utils/Users/Admin/Register';
 import Product from '~/components/Product';
 import ProductsDetails from '~/pages/ProductDetails';
 import NotFound from '~/components/NotFound';
+
 // Public Routes
 const publicRoutes = [
   { path: '/', component: Home },
