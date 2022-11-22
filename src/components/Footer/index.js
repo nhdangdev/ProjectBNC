@@ -104,9 +104,9 @@ const Footer = () => {
                     <strong>Địa chỉ:</strong> 652/55/5 Cộng Hòa, Phường 13, Quận Tân Bình, Thành phố Hồ Chí Minh. <br />
                     <strong>Hotline:</strong>
                     <br />
-                    0941 868 790 - Mr. An
+                    0348 316 452 - Gặp Huyền
                     <br />
-                    0348 316 452 - Ms. Huyền
+                    0941 868 790 - Gặp An
                     <br />
                     <strong>Email liên hệ:</strong> <br />
                     an.nguyen@bncmedical.com.vn
