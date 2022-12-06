@@ -1,25 +1,25 @@
 import React from 'react';
-import classNames from 'classnames/bind';
-import styles from './ProductItem.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-// import Image from '~/components/Image';
-import images from '~/assets/img';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames/bind';
+import Image from '~/components/Image';
+import styles from './ProductItem.module.scss';
 
 const cx = classNames.bind(styles);
 
-function ProductItem() {
+function ProductItem({ data }) {
   return (
-    <div className={cx('wrapper')}>
-      <img className={cx('product-img')} src={images.noImg} alt="avt1" />
+    <Link to={'/@${data.nickname}'} className={cx('wrapper')}>
+      <Image className={cx('product-img')} src={data.avatar} alt={data.full_name} />
       <div className={cx('product-info')}>
         <h4 className={cx('product-name')}>
-          <span>Sản phẩm 1</span>
-          <FontAwesomeIcon className={cx('product-check')} icon={faCheckCircle} />
+          <span>{data.full_name}</span>
+          {data.tick && <FontAwesomeIcon className={cx('product-check')} icon={faCheckCircle} />}
         </h4>
-        <span className={cx('product-username')}>sanpham1</span>
+        <span className={cx('product-username')}>{data.nickname}</span>
       </div>
-    </div>
+    </Link>
   );
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Fragment } from 'react'; // Thẻ chỉ để chứa, không sinh ra trong DOM
-// import "./Css/grid.css";
 
 import { publicRoutes } from '~/routes';
 import { DefaultLayout } from '~/components/Layout';
@@ -17,7 +16,6 @@ function App() {
         <Routes>
           {publicRoutes.map((route, index) => {
             const Page = route.component;
-
             let Layout = DefaultLayout;
             if (route.layout) {
               Layout = route.layout;

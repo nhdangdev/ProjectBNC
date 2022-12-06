@@ -1,32 +1,33 @@
 {
-  "employees": [
+  "staff": [
     {
-      "id": 1,
+      "id": "1",
+      "username": "nhdangdev",
       "firstName": "Nhut",
       "lastName": "Dang",
       "email": "dang.tran@bncmedical.com.vn",
-      "address": "26 Hồ Xuân Hương, Phường 9, Thành phố Đà Lạt"
+      "address": "26 Hồ Xuân Hương, Phường 9, Tp.Đà Lạt"
     }
   ],
   "product": [
     {
       "id": 1,
       "name": "Khẩu trang",
-      "info": "Khẩu Trang N94, KF94, HDM, Đồng sen,...",
+      "status": "Khẩu Trang N94, KF94, HDM, Đồng sen,...",
       "categoryId": 1,
       "price": "200.000 đồng"
     },
     {
       "id": 2,
       "name": "Filter Tip",
-      "info": "Filter tip các loại",
+      "status": "Filter tip các loại",
       "categoryId": 2,
       "price": "145.000 đồng"
     },
     {
       "id": 3,
       "name": "Cồn 70 độ",
-      "info": "Cồn Đồng Sen 70 độ",
+      "status": "Cồn Đồng Sen 70 độ",
       "categoryId": 3,
       "price": "50.000 đồng"
     }
@@ -35,6 +36,11 @@
     "name": "Pom"
   }
 }
+
+
+
+
+
 
 
 

@@ -1,6 +1,4 @@
 import React from 'react';
-import './style.scss';
-
 import Introductions from '~/components/Introductions';
 import About from '~/components/About';
 import Services from '~/components/Services';

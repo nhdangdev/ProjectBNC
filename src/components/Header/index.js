@@ -4,6 +4,8 @@ import '~/components/GlobalStyles';
 import '../../Css/grid.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignIn } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import routesConfig from '~/config/routes';
 
 import logo from '~/assets/img/rv-logo.png';
 import Button from '~/components/Button';
@@ -12,14 +14,13 @@ const Header = () => {
   return (
     /* ======= Header ======= */
     <header id="header" className="header header-scrolled fixed-top">
-      {/* <div className="grid wide"> */}
       <div className="header_wrapper">
-        <a href="/" className="logo">
+        <Link to={routesConfig.home} className="logo">
           <img src={logo} alt="Logo" />
           <span>
             Medical <br /> Equipment
           </span>
-        </a>
+        </Link>
         {/* <nav id="navbar" className="navbar navbar-mobile"> // Click vào icon hiển thị class navbar-mobile */}
         <nav id="navbar" className="navbar ">
           <ul>
@@ -58,7 +59,6 @@ const Header = () => {
         </nav>
         {/* -- .navbar -- */}
       </div>
-      {/* </div> */}
     </header>
     /* End Header */
   );

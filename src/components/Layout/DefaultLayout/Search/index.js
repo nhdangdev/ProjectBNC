@@ -1,29 +1,48 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'; // Thiếu faSpinner
+import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons'; // Thiếu faSpinner
 import HeaderlessTippy from '@tippyjs/react/headless';
-
-import { Wrapper as PopperWrapper } from '~/components/Popper';
 import classNames from 'classnames/bind';
-import styles from './Search.module.scss';
-// import images from '~/assets/img';
+
+import * as requests from '~/utils/request';
+import { Wrapper as PopperWrapper } from '~/components/Popper';
 import ProductItem from '~/components/ProductItem';
+import { useDebounce } from '~/hooks';
+import styles from './Search.module.scss';
 
 const cx = classNames.bind(styles);
 function Search() {
   const [searchValue, setSearchValue] = useState('');
   const [searchResult, setSearchResult] = useState([]);
   const [showResult, setShowResult] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const debounced = useDebounce(searchValue, 500);
 
   const inputRef = useRef();
 
   useEffect(() => {
-    fetch(``)
-      .then((res) => res.json())
+    if (!debounced.trim()) {
+      return;
+    }
+    setLoading(true);
+
+    requests
+      .get(`users/search`, {
+        params: {
+          q: debounced,
+          type: 'less',
+        },
+      })
+      // fetch(`https://637dcd3ecfdbfd9a639d1bda.mockapi.io/api/products`)
       .then((res) => {
-        console.log(res);
+        setSearchResult(res.data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
       });
-  }, [searchValue]);
+  }, [debounced]);
 
   const handleClear = () => {
     setSearchValue('');
@@ -31,10 +50,15 @@ function Search() {
     inputRef.current.focus(); // useRef => Delete and focus the input
   };
 
-  /*eslint no-const-assign: "error"*/
-  /*eslint-env es6*/
   const handleHideResult = () => {
     setShowResult(false);
+  };
+
+  const handleChange = (e) => {
+    const searchValue = e.target.value;
+    if (!searchValue.startsWith(` `)) {
+      setSearchValue(searchValue);
+    }
   };
 
   return (
@@ -46,10 +70,9 @@ function Search() {
           {/* Search */}
           <PopperWrapper>
             <h4 className={cx('search-title')}>Kết Quả</h4>
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
+            {searchResult.map((result) => (
+              <ProductItem key={result.id} data={result} />
+            ))}
           </PopperWrapper>
         </div>
       )}
@@ -61,36 +84,20 @@ function Search() {
           value={searchValue}
           placeholder="Tìm kiếm sản phẩm ..."
           spellCheck={false}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={handleChange}
           onFocus={() => setShowResult(true)}
         />
-        {!!searchValue && (
+        {!!searchValue && !loading && (
           <button className={cx('clear')} onClick={handleClear}>
             <FontAwesomeIcon icon={faCircleXmark} />
           </button>
         )}
-        {/* <FontAwesomeIcon className={cx('loading')} icon={faSpinner} /> */}
-        <button className={cx('search-btn')}>
+        {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
+        <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </div>
     </HeaderlessTippy>
-
-    // ===============================Main content ============================================
-    // <aside className={cx('search')}>
-    //   <h2>Search</h2>
-    //   <img src={images.logo} alt="Logo Sidebar" />
-
-    //   <input placeholder="Tìm kiếm sản phẩm ......" spellCheck={false} />
-    //   <button className={cx('clear')}>
-    //     <FontAwesomeIcon icon={faCircleXmark} />
-    //   </button>
-    //   <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-    //   <button className={cx('search-btn')}>
-    //     {/*Search*/}
-    //     <FontAwesomeIcon icon={faMagnifyingGlass} />
-    //   </button>
-    // </aside>
   );
 }
 

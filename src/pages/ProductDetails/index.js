@@ -1,9 +1,6 @@
 import React from 'react';
 import './style.scss';
-// import '../../components/header/header.css'
 import product1 from '~//assets/img/product/product-1.jpg';
-// import product2 from '../../assets/img/product/product-2.jpg';
-// import product3 from '../../assets/img/product/product-3.jpg';
 import Header from '~/components/Header';
 import Contact from '~/components/Contact';
 import Footer from '~/components/Footer';
@@ -39,12 +36,6 @@ const ProductsDetails = () => {
                     <div className="swiper-slide">
                       <img src={product1} alt="" />
                     </div>
-                    {/* <div className="swiper-slide">
-                            <img src={product2} alt="" />
-                        </div>
-                        <div className="swiper-slide">
-                            <img src={product3} alt="" />
-                        </div> */}
                   </div>
                   <div className="swiper-pagination" />
                 </div>

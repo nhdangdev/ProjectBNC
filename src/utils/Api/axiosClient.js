@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const axiosClient = axios.create({
-  baseUrl: 'https://6375a1257e93bcb006b5f3cc.mockapi.io/api/products/:endpoint', // Nơi gắn link API
+  // baseUrl: 'https://637dcd3ecfdbfd9a639d1bda.mockapi.io/api', // Nơi gắn link API
+  baseUrl: 'https://637dcd3ecfdbfd9a639d1bda.mockapi.io/api', // Nơi gắn link API
   headers: {
     'Content-Type': 'application/json',
   },
