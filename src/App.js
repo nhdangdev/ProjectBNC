@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Fragment } from 'react'; // Thẻ chỉ để chứa, không sinh ra trong DOM
 
 import { publicRoutes } from '~/routes';
-import { DefaultLayout } from '~/components/Layout';
+import DefaultLayout from '~/layouts';
 
 //  <!-- Library CSS Files -->
 import '~/assets/libs/bootstrap-icons/bootstrap-icons.css';

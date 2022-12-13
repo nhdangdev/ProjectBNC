@@ -5,7 +5,7 @@ import images from '~/assets/img';
 
 const About = () => {
   return (
-    <div>
+    <>
       <main id="main">
         {/* ======= About Section ======= */}
         <section id="about" className="about">
@@ -50,7 +50,7 @@ const About = () => {
         </section>
         {/* End About Section */}
       </main>
-    </div>
+    </>
   );
 };
 

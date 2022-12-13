@@ -7,10 +7,8 @@ function DefaultLayout({ children }) {
   return (
     <>
       <Header />
-      <div>
-        <SubHeader />
-        <div>{children}</div>
-      </div>
+      <SubHeader />
+      <div>{children}</div>
     </>
   );
 }

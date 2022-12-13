@@ -4,13 +4,15 @@ import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-s
 import HeaderlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 
-import * as requests from '~/utils/request';
+// import * as searchServices from '~/services/searchService';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import ProductItem from '~/components/ProductItem';
 import { useDebounce } from '~/hooks';
 import styles from './Search.module.scss';
+import request from '~/utils/httpRequest';
 
 const cx = classNames.bind(styles);
+
 function Search() {
   const [searchValue, setSearchValue] = useState('');
   const [searchResult, setSearchResult] = useState([]);
@@ -27,7 +29,7 @@ function Search() {
     }
     setLoading(true);
 
-    requests
+    request
       .get(`users/search`, {
         params: {
           q: debounced,
@@ -67,7 +69,6 @@ function Search() {
       visible={showResult && searchResult.length > 0}
       render={(attrs) => (
         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-          {/* Search */}
           <PopperWrapper>
             <h4 className={cx('search-title')}>Kết Quả</h4>
             {searchResult.map((result) => (

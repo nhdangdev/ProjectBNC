@@ -5,14 +5,14 @@ import '~/components/GlobalStyles';
 
 const Introductions = () => {
   return (
-    <div>
+    <>
       {/* ======= Hero Section ======= */}
       <section id="hero" className="hero d-flex align-items-center">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 d-flex flex-column justify-content-center">
-              <h1 data-aos="fade-up">Chúng tôi cung cấp vật tư y tế, các thiết bị cho phòng thí nghiệm dành cho bạn</h1>
-              <h2 data-aos="fade-up" data-aos-delay="400">
+              <h1>Chúng tôi cung cấp vật tư y tế, các thiết bị cho phòng thí nghiệm dành cho bạn</h1>
+              <h2>
                 Tại đây chúng tôi chuyên cung cấp các thiết bị và hầu hết các loại vật tư y tế:
                 <p>- Bông, băng gạc y tế các loại </p>
                 <p>- Môi trường vận chuyển, dây truyền dịch, dây truyền máu </p>
@@ -42,7 +42,7 @@ const Introductions = () => {
         </div>
       </section>
       {/* End Hero */}
-    </div>
+    </>
   );
 };
 export default Introductions;

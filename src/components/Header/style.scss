@@ -11,10 +11,6 @@
     background: #fff;
     padding: 15px 0;
     box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.2);
-
-    &.fixed-top {
-      position: relative;
-    }
   }
 
   & .logo {
@@ -65,7 +61,6 @@
   padding: 0 80px;
 }
 
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -82,7 +77,7 @@
     list-style: none;
     align-items: center;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       display: none;
     }
 
@@ -147,7 +142,6 @@
   }
 }
 
-
 /**
 * Mobile Navigation 
 */
@@ -173,7 +167,7 @@
 }
 
 .navbar-mobile {
-  position: fixed;
+  position: fixed !important;
   overflow: hidden;
   top: 0;
   right: 0;
@@ -226,22 +220,3 @@
     margin: 15px;
   }
 }
-
-// .more-btn {
-//   font-size: 1.2rem;
-//   margin-left: 28px;
-//   padding: 4px 8px;
-//   background: transparent;
-// }
-
-// .Popper_wrapper__ogBUm {
-//   min-height: 50px;
-// }
-
-
-// // Menu Items
-// .menu-items {
-//   width: 100%;
-//   border-radius: 8px;
-//   height: 100%;
-// }

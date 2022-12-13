@@ -1,28 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.scss';
 import '~/components/GlobalStyles';
 import '../../Css/grid.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignIn } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 import logo from '~/assets/img/rv-logo.png';
 import Button from '~/components/Button';
 
 const Header = () => {
+  const [isActive, setActive] = useState('false');
+
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
   return (
     /* ======= Header ======= */
     <header id="header" className="header header-scrolled fixed-top">
       <div className="header_wrapper">
-        <Link to={routesConfig.home} className="logo">
+        <Link to={config.routes.home} className="logo">
           <img src={logo} alt="Logo" />
           <span>
             Medical <br /> Equipment
           </span>
         </Link>
-        {/* <nav id="navbar" className="navbar navbar-mobile"> // Click vào icon hiển thị class navbar-mobile */}
-        <nav id="navbar" className="navbar ">
+        <nav id="navbar" className={isActive ? 'navbar' : 'navbar navbar-mobile'}>
           <ul>
             <li>
               <a className="nav-link crollto active" href="/">
@@ -55,7 +59,10 @@ const Header = () => {
               </Button>
             </li>
           </ul>
-          <i className="bi bi-list mobile-nav-toggle " />
+          <i
+            className={isActive ? 'bi bi-list mobile-nav-toggle' : 'bi mobile-nav-toggle bi-x'}
+            onClick={handleToggle}
+          />
         </nav>
         {/* -- .navbar -- */}
       </div>

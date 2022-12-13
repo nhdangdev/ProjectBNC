@@ -1,17 +1,17 @@
 .wrapper {
   --default-layout-width: 1150px;
-  --search-layout-header-height: 80px;
+  --search-layout-header-height: 60px;
   --search-border-radius: 92px;
   --search-height: 46px;
   --search-top-space: 9px;
   --search-button-width: 52px;
 
   width: 100%;
-  height: var(--search-layout-header-height, 60px);
+  height: var(--search-layout-header-height);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
   display: flex;
   justify-content: center;
-  margin-top: 12px;
+  margin-top: 100px;
 }
 
 .inner {

@@ -1,6 +1,4 @@
-// Layouts
-// ----------------------------------------------------------------
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 //Pages
 import Home from '~/pages/Home';
@@ -14,14 +12,14 @@ import Profile from '~/pages/Profile';
 
 // Public Routes
 const publicRoutes = [
-  { path: routesConfig.home, component: Home },
-  { path: routesConfig.search, component: Search, layout: null },
-  { path: routesConfig.login, component: Login, layout: null },
-  { path: routesConfig.register, component: Register, layout: null },
-  { path: routesConfig.notFound, component: NotFound, layout: null },
-  { path: routesConfig.product, component: Product, layout: null },
-  { path: routesConfig.productsDetails, component: ProductsDetails, layout: null },
-  { path: routesConfig.profile, component: Profile, layout: null },
+  { path: config.routes.home, component: Home },
+  { path: config.routes.search, component: Search, layout: null },
+  { path: config.routes.login, component: Login, layout: null },
+  { path: config.routes.register, component: Register, layout: null },
+  { path: config.routes.notFound, component: NotFound, layout: null },
+  { path: config.routes.product, component: Product, layout: null },
+  { path: config.routes.productsDetails, component: ProductsDetails, layout: null },
+  { path: config.routes.profile, component: Profile, layout: null },
 ];
 const privateRoutes = [];
 export { publicRoutes, privateRoutes };

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './subHeader.module.scss';
 import classNames from 'classnames/bind';
-import Search from '~/components/Layout/DefaultLayout/Search';
+import Search from '~/layouts/DefaultLayout/Search';
 
 const cx = classNames.bind(styles);
 function SubHeader() {
