@@ -30,13 +30,12 @@ function Search() {
     setLoading(true);
 
     request
-      .get(`users/search`, {
+      .get(`products`, {
         params: {
           q: debounced,
           type: 'less',
         },
       })
-      // fetch(`https://637dcd3ecfdbfd9a639d1bda.mockapi.io/api/products`)
       .then((res) => {
         setSearchResult(res.data);
         setLoading(false);

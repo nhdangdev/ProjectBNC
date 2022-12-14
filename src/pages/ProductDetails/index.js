@@ -48,13 +48,13 @@ const ProductsDetails = () => {
                       <strong>Category</strong>: BNC design
                     </li>
                     <li>
-                      <strong>Client</strong>: ASU Company
+                      <strong>Hãng</strong>: Việt Nam
                     </li>
                     <li>
-                      <strong>Project date</strong>: 01 March, 2021
+                      <strong>Số lô (Date)</strong>: 01/03/2021
                     </li>
                     <li>
-                      <strong>Project URL</strong>: <a href="/home">www.bncmedical.com.vn</a>
+                      <strong>Link URL</strong>: <a href="/home">www.bncmedical.com.vn</a>
                     </li>
                   </ul>
                 </div>
