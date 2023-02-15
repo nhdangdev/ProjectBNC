@@ -7,6 +7,7 @@ const routes = {
   product: '/product',
   productsDetails: '/product-details',
   profile: '/@:nickname',
+  ShoppinngCart: '/Cart',
 };
 
 export default routes;

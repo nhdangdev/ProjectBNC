@@ -1,0 +1,37 @@
+.wrapper {
+  --default-layout-width: 1150px;
+  --search-layout-header-height: 60px;
+  --search-border-radius: 92px;
+  --search-height: 46px;
+  --search-top-space: 9px;
+  --search-button-width: 52px;
+
+  width: 100%;
+  height: var(--search-layout-header-height);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.shoppingCart {
+  display: flex;
+  font-size: 22px;
+  margin-left: 40px;
+
+  svg {
+    color: #23acae;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 2px 2px;
+
+    &:hover {
+      opacity: 0.8;
+      color: #fff;
+      background: #23acae;
+      border: 1px solid;
+      padding: 10px;
+      box-shadow: 2px 2px;
+    }
+  }
+}

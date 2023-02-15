@@ -1,7 +1,7 @@
 import React from 'react';
 import images from '~/assets/img';
 import './style.scss';
-import '~/components/GlobalStyles';
+import '~/components/GlobalStyles/GlobalStyles';
 
 const Introductions = () => {
   return (

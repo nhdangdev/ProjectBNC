@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.scss';
-import '~/components/GlobalStyles';
+import '~/components/GlobalStyles/GlobalStyles';
 import '../../Css/grid.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignIn } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import config from '~/config';
 
 import logo from '~/assets/img/rv-logo.png';
-import Button from '~/components/Button';
+import Button from '~/components/Button/Button';
 
 const Header = () => {
   const [isActive, setActive] = useState('false');

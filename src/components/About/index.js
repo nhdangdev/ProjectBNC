@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import '~/components/GlobalStyles';
+import '~/components/GlobalStyles/GlobalStyles';
 import images from '~/assets/img';
 
 const About = () => {

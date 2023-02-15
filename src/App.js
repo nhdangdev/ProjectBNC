@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Fragment } from 'react'; // Thẻ chỉ để chứa, không sinh ra trong DOM
 
-import { publicRoutes } from '~/routes';
+import { publicRoutes } from '~/routes/routes';
 import DefaultLayout from '~/layouts';
 
 //  <!-- Library CSS Files -->
