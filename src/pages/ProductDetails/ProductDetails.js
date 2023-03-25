@@ -1,17 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './productDetails.scss';
 import Header from '~/components/Header';
-import Contact from '~/components/Contact/Contact';
+import Contact from '~/components/Contact';
 import Footer from '~/components/Footer';
 
 import images from '~/assets/img';
+// import ProductDescription from './ProductDescription';
+// import ProductIngredient from './ProductIngredient';
+// import Document from './Document';
+// import Comment from './Comment';
+
+const tabs = ['Mô tả sản phẩm', 'Thành phần', 'Hướng dẫn sử dụng', 'Bình luận'];
 
 function ProductsDetails() {
-  const [active, setActive] = useState(false);
-  const handleClick = () => {
-    setActive(!active);
-  };
-  console.log('setActive');
+  // const [active, setActive] = useState('');
+  const [posts, setPosts] = useState([]);
+  const [type, setType] = useState('Mô tả sản phẩm');
+
+  useEffect(() => {
+    fetch(`https:jsonplaceholder.typicode.com/${type}`)
+      .then((res) => res.json())
+      .then((posts) => {
+        setPosts(posts);
+      });
+  }, [type]);
+
   return (
     <div>
       <Header />
@@ -115,7 +128,7 @@ function ProductsDetails() {
           </div>
         </section>
         {/* End Product Details Section */}
-        <div className="productTabsContent">
+        {/* <div className="productTabsContent">
           <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item">
               <a
@@ -171,8 +184,28 @@ function ProductsDetails() {
               </a>
             </li>
           </ul>
+        </div> */}
+        <div className="productTabsContent">
+          <ul className="nav nav-tabs" id="myTab" role="tablist">
+            {tabs.map((tab) => (
+              <li className="nav-item" key={tab} onClick={() => setType(tab)}>
+                <a
+                  className="nav-link"
+                  style={type === tab ? { background: '#23acae', color: 'white' } : {}}
+                  onClick={() => setType(tab)}
+                >
+                  {tab}
+                </a>
+              </li>
+            ))}
+
+            {posts.map((post) => (
+              <li key={post.id}>{post.username}</li>
+            ))}
+          </ul>
         </div>
-        <div className="tab-content" id="myTabContent">
+        {/* <ProductDescription /> || <ProductIngredient /> || <Document /> || <Comment /> */}
+        {/* <div className="tab-content" id="myTabContent">
           <div className="tab-pane fade show active" id="tabOne" role="tabpanel" aria-labelledby="home-tab">
             <div>
               <p>&nbsp;</p>
@@ -212,7 +245,7 @@ function ProductsDetails() {
               <p></p>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
       {/* End #main */}
       <Contact />

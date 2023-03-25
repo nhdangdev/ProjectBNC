@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import config from '~/config';
 
 import logo from '~/assets/img/rv-logo.png';
-import Button from '~/components/Button/Button';
+import Button from '~/components/Button';
 
 const Header = () => {
   const [isActive, setActive] = useState('false');

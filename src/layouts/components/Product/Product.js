@@ -14,6 +14,21 @@ function Product() {
   const [productsList, setProductList] = useState(dataItems);
   console.log(setProductList);
 
+  // addProductItem = () => {
+  //   this.setState({
+  //     cart: ['Khảu trang'],
+  //     total: 5,
+  //   });
+  // };
+  // currencyOptions = {
+  //   minimumFactionDigits: 2,
+  //   maximumFactionDigits: 2,
+  // };
+
+  // getTotal = () => {
+  //   return this.state.total.toLocalString(undefined, this.currencyOptions);
+  // };
+
   const listItems = productsList.map((items) => {
     return (
       <article className="entry l-4" key={items.id}>
@@ -40,16 +55,12 @@ function Product() {
           />
           <div className="read-more">
             <a href="/product">Xem chi tiết</a>
-            <button className="addItems" onClick={this.dataItems.count}>
-              Thêm sản phẩm
-            </button>
+            <button className="addItems">Thêm sản phẩm</button>
           </div>
         </div>
       </article>
     );
   });
-
-  console.log(listItems);
 
   return (
     <>

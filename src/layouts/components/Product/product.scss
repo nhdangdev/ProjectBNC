@@ -71,6 +71,11 @@
     & .entry-img {
       margin: -30px -25px 20px -25px;
       overflow: hidden;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     & .entry-title {

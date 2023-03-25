@@ -3,7 +3,7 @@ const routes = {
   search: '/Search',
   login: '/login',
   register: '/register',
-  notFound: '/notFound',
+  notFound: '*',
   product: '/product',
   productsDetails: '/product-details',
   profile: '/@:nickname',

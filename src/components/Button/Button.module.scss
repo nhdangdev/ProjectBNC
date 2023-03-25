@@ -77,3 +77,21 @@
   min-width: 140px;
   padding: 14px 16px;
 }
+
+
+// Button
+.pay {
+  background-color: #16cc9b;
+  border: 2px solid #16cc9b;
+  color: #fff;
+  font-weight: 550;
+  width: 30%;
+
+  &::after {
+    content: '';
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

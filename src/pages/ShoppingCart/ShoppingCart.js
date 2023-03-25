@@ -8,6 +8,7 @@ import styles from './shoppingCart.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { NumericFormat } from 'react-number-format';
+import Button from '~/components/Button';
 
 // Danh sách sản phẩm
 import dataItems from '~/Data/database';
@@ -55,8 +56,6 @@ const cx = classNames.bind(styles);
 // // });
 
 function ShoppingCart() {
-  // const vatPrice = [10000];
-  // const discountPrice = [5000];
   const [productsList, setProductList] = useState(dataItems);
 
   const totalMoney = dataItems.reduce((a, cur) => a + cur.priceCurrent, 0);
@@ -140,15 +139,16 @@ function ShoppingCart() {
               </li>
               <li className={cx('vat')}>
                 {/* <NumericFormat value={vatPrice} displayType={'text'} thousandSeparator={true} suffix={' đ'} /> */}
-                VAT:<span>10.000 đ</span>
+                VAT:<span>10,000 đ</span>
               </li>
               <li className={cx('discount hide')}>
                 {/* <NumericFormat value={discountPrice} displayType={'text'} thousandSeparator={true} suffix={' đ'} /> */}
-                Discount<span>5.000 đ</span>
+                Discount<span>5,000 đ</span>
               </li>
               <li className={cx('total')}>
                 {/* Tổng tiền phải trả:<span>{totalMoney - (vatPrice + discountPrice)} đ</span> */}
               </li>
+              <Button className="pay">Thanh toán</Button>
             </ul>
           </div>
         </section>

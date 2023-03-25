@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 NotFound.propTypes = {};
@@ -16,7 +17,7 @@ function NotFound() {
         <h2>404</h2>
         <h4>Opps ! Trang bạn tìm kiếm không tồn tại</h4>
         <p>Trang bạn đang tìm kiếm không tồn tại. Bạn có thể đã nhập sai địa chỉ hoặc trang có thể đã bị di chuyển.</p>
-        <a href="/">Trở lại trang chủ</a>
+        <Link to="/">Trở lại trang chủ</Link>
       </div>
     </div>
   );
